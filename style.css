@@ -1,0 +1,10 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+.list-group-item {
+  line-height: 1.6;
+}
+.card-text {
+  font-size: 0.95rem;
+}
