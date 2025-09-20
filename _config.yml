@@ -1,0 +1,9 @@
+title: Conor Kingston
+description: Professional Portfolio
+baseUrl: ""
+url: "https://conorkingston.com"
+markdown: kramdown
+theme: minima
+collections:
+  case_studies:
+    output: true
