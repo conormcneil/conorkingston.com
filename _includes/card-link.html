@@ -1,0 +1,13 @@
+
+<a href="{{ include.url }}" class="text-decoration-none text-reset">
+    <div class="card mb-3">
+      {% if include.img %}
+        <img src="{{ include.img }}" class="card-img-top" alt="{{ include.title }}">
+      {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ include.title }}</h5>
+            <h6 class="card-subtitle text-muted">{{ include.date | date: "%B %Y" }}</h6>
+            <p class="card-text">{{ include.text }}</p>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,53 @@
+---
+layout: default
+title: Home
+---
+
+<main class="container my-5">
+  <section>
+    <h2 class="mb-4">Project Case Studies</h2>
+    {% for case in site.case_studies %}
+      {% include card-link.html
+        url=case.url
+        title=case.title
+        date=case.date
+        text=case.summary
+      %}
+    {% endfor %}
+  </section>
+
+  <section class="mt-5">
+    <h2 class="mb-4">Blog</h2>
+    {% for post in site.posts %}
+     {% include card-link.html
+      url=post.url
+      title=post.title
+      date=post.date
+      text=post.summary
+     %}
+    {% endfor %}
+  </section>
+
+  <section class="mt-5">
+    <h2 class="mb-4">Contact Me</h2>
+    <form action="https://formspree.io/f/mwpngnrj" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Send Message</button>
+    </form>
+  </section>
+
+  <section class="mt-5 text-center">
+    <a href="assets/Conor_Kingston_Resume.pdf" class="btn btn-primary">Download Resume</a>
+  </section>
+</main>

@@ -8,3 +8,7 @@ body {
 .card-text {
   font-size: 0.95rem;
 }
+.unstyled-anchor {
+  color: inherit;
+  text-decoration: none;
+}
