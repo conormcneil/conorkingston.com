@@ -6,26 +6,32 @@ title: Home
 <main class="container my-5">
   <section>
     <h2 class="mb-4">Project Case Studies</h2>
-    {% for case in site.case_studies %}
-      {% include card-link.html
-        url=case.url
-        title=case.title
-        date=case.date
-        text=case.summary
-      %}
+    {% for case in site.case_studies | limit: 2 %}
+      {% unless case.exclude_from_list %}
+        {% include card-link.html
+          url=case.url
+          title=case.title
+          date=case.date
+          text=case.summary
+        %}
+      {% endunless %}
     {% endfor %}
+    <a href="/case_studies/" class="btn btn-secondary">See More Case Studies</a>
   </section>
 
   <section class="mt-5">
     <h2 class="mb-4">Blog</h2>
-    {% for post in site.posts %}
-     {% include card-link.html
-      url=post.url
-      title=post.title
-      date=post.date
-      text=post.summary
-     %}
+    {% for post in site.posts | limit: 2 %}
+      {% unless post.exclue_from_list %}
+        {% include card-link.html
+          url=post.url
+          title=post.title
+          date=post.date
+          text=post.summary
+        %}
+      {% endunless %}
     {% endfor %}
+    <a href="/blog/" class="btn btn-secondary">See More Blog Posts</a>
   </section>
 
   <section class="mt-5">

@@ -7,5 +7,6 @@ theme: minima
 collections:
   case_studies:
     output: true
+    permalink: /case_studies/:year/:month/:day/:title
   posts:
     permalink: /blog/:year/:month/:day/:title
