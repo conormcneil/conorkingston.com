@@ -12,9 +12,18 @@
             </li>
         {% endif %}
         {% if page.url contains '/case_studies/' %}
-            <li class="breadcrumb-item p-1 {% if page.url == '/case_studies/' %}active{% endif %}">
+            <li class="breadcrumb-item p-1 {% if page.url contains '/case_studies/' and page.url == '/case_studies/' %}active{% endif %}">
                 {% if page.url contains '/case_studies/' %}
-                    Case Studies
+                    <a {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %} href="/case_studies/"{% endif %}>
+                        Case Studies
+                    </a>
+                {% endif %}
+            </li>
+        {% endif %}
+        {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}
+            <li class="breadcrumb-item p-1 {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}active{% endif %}">
+                {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}
+                    Post
                 {% endif %}
             </li>
         {% endif %}
