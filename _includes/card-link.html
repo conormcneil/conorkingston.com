@@ -1,4 +1,3 @@
-
 <a href="{{ include.url }}" class="text-decoration-none text-reset">
     <div class="card mb-3">
       {% if include.img %}
@@ -8,6 +7,7 @@
             <h5 class="card-title">{{ include.title }}</h5>
             <h6 class="card-subtitle text-muted">{{ include.date | date: "%B %Y" }}</h6>
             <p class="card-text">{{ include.text }}</p>
+            <a href="{{ include.url }}" class="card-link">Read More</a>
         </div>
     </div>
 </a>
