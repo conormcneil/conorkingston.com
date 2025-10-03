@@ -10,29 +10,41 @@ As part of my work with the Planetary Data System (PDS), I led the deployment of
 
 ---
 
-## My Role
+## Role & Responsibilities
 {: .pb-2}
 
-This project demonstrates my diverse skillset as both a <strong>systems administrator and software programmer</strong>.
+This project showcases my multifaceted skill set as a <strong>systems administrator and software programmer</strong>, with a focus on infrastructure design, automation, and secure deployment practices.
 
-My responsibilities included:
+### Project Planning & Architecture
+{: .text-secondary}
 
-- Project Planning and Tracking
-    - Collaborating with the lead project scientist to define and capture requirements
-    - Researching and choosing the appropriate technology stack
-    - Project planning and tracking
-    - Architecting integration with existing infrastructure
-- Development
-    - Selecting and customizing Docker images
-    - Configuring authentication and user environments
-    - Ensuring security and maintainability
-- Deployment
-- Documentation
-    - Writing documentation SOPs and Knowledge Base articles
-        - Standard Operating Procedures for deployment and maintenance
-        - Knowledge Base articles for users
-        - How-To guides
-    - Planning for future cloud migration
+- Partnered with the lead project scientist to gather and refine technical requirements.
+- Conducted comparative analysis of containerized solutions, ultimately selecting **[JupyterHub](https://jupyter.org/hub) with [DockerSpawner](https://github.com/jupyterhub/dockerspawner)** to balance usability, scalability, and maintainablity.
+- Designed a deployment architecture that integrates with existing on-prem infrastructure, including:
+    - **SSL termination via a proxy VM running Apache httpd**, supporting multiple subdomains under a shared external IP.
+    - **Secure, direct access to archive data stored on an on-prem NAS**, using **NFS mounts** combined with **[UnionFS](https://unionfs.filesystems.org/) overlays** to provide seamless, read-only access to hundreds of terabytes of archive datasets while preserving container isolation and performance.
+
+
+### Infrastructure & Deployment
+{: .text-secondary}
+
+- Built and deployed a **production-grade JupyterHub environment** using Docker containers, designed for long-term maintainability and scalability.
+- Architected the system with **future cloud migration in mind**, ensuring compatibility with AWS-hosted services and container orchestration platforms.
+- Imlpemented **secure authentication** using Google OAuth 2.0 and user environment isolation.
+- **Automated deployment workflows** and configuration management to ensure reproducibility and reduce operational overhead.
+
+### Security & Maintainability
+{: .text-secondary}
+
+- Applied best practices for container hardening and network segmentation.
+- Developed and enforced **Standard Operating Procedures (SOPs)** for deployment, updates, and incident response.
+- Created a suite of **Knowledge Base articles and How-To guides** to support end users and streamline onboarding.
+
+### Cloud Migration Planning
+{: .text-secondary}
+
+- Evaluated cloud-native alternatives and designed a migration strategy to transition to AWS with minimal disruption.
+- Ensured compatibiility with existing data pipelines and authentication systems.
 
 ---
 
@@ -42,18 +54,18 @@ My responsibilities included:
 ### Architecture
 {: .text-secondary}
 
-- **Base Image**: Used <samp>quay.io/jupyter/scipy-notebook</samp> from the Jupyter Docker Stacks for a rich scientific Python environment.
-- **Spawner**: Configured <samp>DockerSpawner</samp> to isolate user environments.
-- **Authentication**: Integrated with <abbr title="Lightweight Directory Access Protocol" class="initialism">LDAP</abbr> for secure user access.
-- **Storage**: Mounted persistent volumes for user data and notebooks.
-- **Networking**: Deployed behind a reverse proxy with HTTPS via Let's Encrypt.
+- **Hyper-V Virtual Machine** host with Docker Engine, Docker Compose, and a Jupyter server.
+- **Logical Volume Management** technology simplifies scaling the amount of storage available to the VM and enables daily checkpoints to ensure system and user data are recoverable.
+- Mounted **persistent volumes** for user data and notebooks.
+- Utilized **DockerSpawner** to easily spawn separate containers for every user, increasing security and easing future integration with orchestration services.
+- Integrated with **Google OAuth 2.0** for secure user access with existing credentials for any user explicitly included in a custom allow list.
+- Deployed in a segmented VLAN behind a reverse proxy with **HTTPS** provided by Let's Encrypt.
 
 ### DevOps & Automation
 {: .text-secondary}
 
-- Created reusable Docker Compose configurations for local testing.
-- Used GitHub Actions to automate image builds and updates.
-- Documented deployment steps for reproducability and team onboarding.
+- Used Ansible to define roles and playbooks to **automate VM provisioning**.
+- Created reusable Docker Compose configurations for consistent, **platform-independent container deployment**.
 
 ---
 
