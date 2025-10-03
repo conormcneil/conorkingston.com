@@ -75,28 +75,22 @@ This project showcases my multifaceted skill set as a <strong>systems administra
 ### Challenges
 {: .text-secondary}
 
-<table class="table">
-    <thead>
-        <th>Challenge</th>
-        <th>Solution</th>
-    </thead>
-    <tr>
-        <td>Ensuring compatibility with existing on-prem systems</td>
-        <td>Customized Docker images and network settings</td>
-    </tr>
-    <tr>
-        <td>Managing user environments securely</td>
-        <td>Isolated containers with persistent storage</td>
-    </tr>
-    <tr>
-        <td>Preparing for AWS migration</td>
-        <td>Modular architecture with cloud-ready components</td>
-    </tr>
-</table>
+**Challenge**: Disorganized archive data split across multiple directories, including overlapping and superseded datasets.
+
+**Solution**: Researched and implemented a Unionfs overlay to present a unified, read-only mount with authoritative data.
+
+**Outcome**: Delivered a clean, reliable user experience while gaining valuable expertise in filesystem overlays and legacy data integration.
+
+The most unexpected challenge in this deployment was the complexity of the archive data storage layout. I initially assumed the data would be organized under a single, unified directory structure. Instead, I discovered that the archive was fragmented across multiple locations: PDS3 data, PDS4 data, and the Catalina Sky Survey (CSS) data, which was so large it warranted its own top-level directory.
+
+My original plan was to mount each of these datasets separately and expose them to users as distinct volumes. However, this approach quickly broke down when I encountered theh OSIRIS-REx mission data. It was split across two diretories, each containing a mix of unique and overlapping datasets. Crucially, one of the directories included updated versions of certain datasets that superseded older versions found in the other. Users needed to access the most current and authoritative data, but the disorganized structure made it difficult to expose a clean, reliable view.
+
+This situation required a solution that could abstract away the underlying complexity and present a clean, logical view of the data. After researching filesystem overlay techniques, I identified **Unionfs** as a viable approach. I studied its behavior, tested various configurations, and ultimately implemented a setup that merged the relevant directories while prioritizing the correct versions of the data. This allowed me to expose a unified, read-only mount to users that masked the disorganization and ensured consistent access to authoritative datasets.
+
+Solving this technical challenge taught be a great deal about **filesystem overlays**, particularly how they can be used to abstract and simplify access to fragmented or inconsistent data sources. It even works with network storage, which makes it incredibly adaptable. I'm glad to have this knowledge in my toolbelt- it's a powerful technique I'll be able to apply to future filesystem challenges, especially in environments where legacy data structures and modern workflows intersect.
 
 ### Impact
 {: .text-secondary}
-
 
 - Enabled researchers to run Python notebooks without local setup.
 - Reduced onboarding time for new users.
