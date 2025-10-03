@@ -5,42 +5,63 @@ date: 2025-09-27
 summary: Centralized computing platform for scientists to work with PDS data in a cloud-like environment.
 ---
 
-<p class="lead">As part of my work with the Planetary Data System (PDS), I led the deployment of a scalable, containerized JupyterHub environment to support scientific computing and data analysis workflows. The goal was to provide researchers with a secure, flexible, and user-friendly platform for working with Python-based tools and notebooks, while laying the groundwork for future migration to AWS.</p>
+As part of my work with the Planetary Data System (PDS), I led the deployment of a scalable, containerized JupyterHub environment to support scientific computing and data analysis workflows. The goal was to provide secure access to PDS compute and storage resources via a flexible and user-friendly platform for working with Python-based tools and notebooks, while simultaneously laying the groundwork for future migration to AWS.
+{: .lead}
 
-<hr>
-<h2 class="pb-2">My Role</h2>
-<p>I served as the <strong>lead systems administrator and architect</strong> for this deployment. My responsibilities included:</p>
-<ul>
-    <li>Designing the infrastructure</li>
-    <li>Selecting and customizing Docker images</li>
-    <li>Configuring authentication and user environments</li>
-    <li>Ensuring security and maintainability</li>
-    <li>Planning for cloud migration</li>
-</ul>
+---
 
-<hr>
-<h2 class="pb-2">Technical Approach</h2>
+## My Role
+{: .pb-2}
 
-<h3 class="text-secondary">Architecture</h3>
-<ul>
-    <li><strong>Base Image</strong>: Used <samp>quay.io/jupyter/scipy-notebook</samp> from the Jupyter Docker Stacks for a rich scientific Python environment.</li>
-    <li><strong>Spawner</strong>: Configured <samp>DockerSpawner</samp> to isolate user environments.</li>
-    <li><strong>Authentication</strong>: Integrated with <abbr title="Local Domain Access Protocol" class="initialism">LDAP</abbr> for secure user access.</li>
-    <li><strong>Storage</strong>: Mounted persistent volumes for user data and notebooks.</li>
-    <li><strong>Networking</strong>: Deployed behind a reverse proxy with HTTPS via Let's Encrypt.</li>
-</ul>
+This project demonstrates my diverse skillset as both a <strong>systems administrator and software programmer</strong>.
 
-<h3 class="text-secondary">DevOps & Automation</h3>
-<ul>
-    <li>Created reusable Docker Compose configurations for local testing.</li>
-    <li>Used GitHub Actions to automate image builds and updates.</li>
-    <li>Documented deployment steps for reproducability and team onboarding.</li>
-</ul>
+My responsibilities included:
 
-<hr>
-<h2 class="pb-2 text">Outcome</h2>
+- Project Planning and Tracking
+    - Collaborating with the lead project scientist to define and capture requirements
+    - Researching and choosing the appropriate technology stack
+    - Project planning and tracking
+    - Architecting integration with existing infrastructure
+- Development
+    - Selecting and customizing Docker images
+    - Configuring authentication and user environments
+    - Ensuring security and maintainability
+- Deployment
+- Documentation
+    - Writing documentation SOPs and Knowledge Base articles
+        - Standard Operating Procedures for deployment and maintenance
+        - Knowledge Base articles for users
+        - How-To guides
+    - Planning for future cloud migration
 
-<h3 class="text-secondary">Challenges</h3>
+---
+
+## Technical Approach
+{: .pb-2}
+
+### Architecture
+{: .text-secondary}
+
+- **Base Image**: Used <samp>quay.io/jupyter/scipy-notebook</samp> from the Jupyter Docker Stacks for a rich scientific Python environment.
+- **Spawner**: Configured <samp>DockerSpawner</samp> to isolate user environments.
+- **Authentication**: Integrated with <abbr title="Lightweight Directory Access Protocol" class="initialism">LDAP</abbr> for secure user access.
+- **Storage**: Mounted persistent volumes for user data and notebooks.
+- **Networking**: Deployed behind a reverse proxy with HTTPS via Let's Encrypt.
+
+### DevOps & Automation
+{: .text-secondary}
+
+- Created reusable Docker Compose configurations for local testing.
+- Used GitHub Actions to automate image builds and updates.
+- Documented deployment steps for reproducability and team onboarding.
+
+---
+
+## Outcome
+{: .pb-2}
+
+### Challenges
+{: .text-secondary}
 
 <table class="table">
     <thead>
@@ -61,25 +82,27 @@ summary: Centralized computing platform for scientists to work with PDS data in 
     </tr>
 </table>
 
-<h3 class="text-secondary">Impact</h3>
+### Impact
+{: .text-secondary}
 
-<ul>
-    <li>Enabled researchers to run Python notebooks without local setup.</li>
-    <li>Reduced onboarding time for new users.</li>
-    <li>Improved reproducibility and collaboration across teams.</li>
-    <li>Established a foundation for future cloud migration.</li>
-</ul>
 
-<hr>
-<h2 class="pb-2 text">Reflections</h2>
+- Enabled researchers to run Python notebooks without local setup.
+- Reduced onboarding time for new users.
+- Improved reproducibility and collaboration across teams.
+- Established a foundation for future cloud migration.
 
-<p>This project deepened my experience with container orchestration, secure authentication, and infrastructure-as-code. If I were to iterate on this deployment, I’d explore Kubernetes for better scalability and integrate monitoring tools like Prometheus and Grafana for observability.</p>
+---
 
-<hr>
-<h2 class="pb-2 text">Related Work & Next Steps</h2>
+## Reflections
+{: .pb-2}
 
-<ul>
-    <li>Migrate the deployment to AWS using EKS and S3-backed storage.</li>
-    <li>Expand support for R and Julia kernels.</li>
-    <li>Implement role-based access controls and resource quotas.</li>
-</ul>
+This project deepened my experience with container orchestration, secure authentication, and infrastructure-as-code. If I were to iterate on this deployment, I’d explore Kubernetes for better scalability and integrate monitoring tools like Prometheus and Grafana for observability.
+
+---
+
+## Related Work & Next Steps
+{: .pb-2}
+
+- Migrate the deployment to AWS using EKS and S3-backed storage.
+- Expand support for R and Julia kernels.
+- Implement role-based access controls and resource quotas.
