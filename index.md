@@ -6,8 +6,8 @@ title: Home
 <main class="container pb-3">
   <div class="row">
     <div class="col-12 col-md-8">
-      <section id="case-studies">
-        <h2 class="">Project Case Studies</h2>
+      <section class="mb-3" id="case-studies">
+        <h2>project case studies</h2>
         {% for case in site.case_studies | limit: 2 %}
           {% unless case.exclude_from_list %}
             {% include card-link.html
@@ -18,11 +18,11 @@ title: Home
             %}
           {% endunless %}
         {% endfor %}
-        <a href="/case_studies/" class="btn btn-secondary">See More Case Studies</a>
+        <a href="/case_studies/" class="btn btn-secondary">see more case studies</a>
       </section>
 
-      <section id="blog">
-        <h2 class="mt-4">Blog</h2>
+      <section class="mb-3" id="blog">
+        <h2>blog</h2>
         <p>stay tuned for more!</P>
         <!-- {% for post in site.posts | limit: 2 %}
           {% unless post.exclue_from_list %}
@@ -34,7 +34,7 @@ title: Home
             %}
           {% endunless %}
         {% endfor %}
-        <a href="/blog/" class="btn btn-secondary">See More Blog Posts</a> -->
+        <a href="/blog/" class="btn btn-secondary">see more blog posts</a> -->
       </section>
     </div>
 
@@ -45,21 +45,21 @@ title: Home
         </section>
       </div>
       <section id="contact-me">
-        <h2 class="mb-4">Contact Me</h2>
+        <h2 class="mb-4">contact me</h2>
         <form action="https://formspree.io/f/mwpngnrj" method="POST">
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+            <label for="name" class="form-label">name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="your name">
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
           </div>
           <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message"></textarea>
+            <label for="message" class="form-label">message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="your message"></textarea>
           </div>
-          <button type="submit" class="btn btn-success">Send Message</button>
+          <button type="submit" class="btn btn-success">send message</button>
         </form>
       </section>
     </div>

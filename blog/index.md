@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog
+title: blog
 permalink: /blog/
 exclude_from_list: true
 ---

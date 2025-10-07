@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Case Studies
+title: case studies
 permalink: /case_studies/
 exclude_from_list: true
 ---

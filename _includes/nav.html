@@ -2,14 +2,14 @@
     <ol class="breadcrumb">
         {% if page.url != '/' %}
             <li class="breadcrumb-item p-1">
-                <a href="/">Home</a>
+                <a href="/">home</a>
             </li>
         {% endif %}
         {% if page.url contains '/blog/' %}
             <li class="breadcrumb-item p-1 {% if page.url contains '/blog/' and pagelurl == '/blog/' %}active{% endif %}">
                 {% if page.url contains '/blog/' %}
                     <a {% if page.url contains '/blog/' and page.url != '/blog/' %} href="/blog/" {% endif %}>
-                        Blog
+                        blog
                     </a>
                 {% endif %}
             </li>
@@ -17,7 +17,7 @@
         {% if page.url contains '/blog/' and page.url != '/blog/' %}
             <li class="breadcrumb-item p-1 {% if page.url contains '/blog/' and page.url != '/blog/' %}active{% endif %}">
                 {% if page.url contains '/blog/' and page.url != '/blog/' %}
-                    Blog Post
+                    blog post
                 {% endif %}
             </li>
         {% endif %}
@@ -26,7 +26,7 @@
             <li class="breadcrumb-item p-1 {% if page.url contains '/case_studies/' and page.url == '/case_studies/' %}active{% endif %}">
                 {% if page.url contains '/case_studies/' %}
                     <a {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %} href="/case_studies/"{% endif %}>
-                        Case Studies
+                        case studies
                     </a>
                 {% endif %}
             </li>
@@ -34,7 +34,7 @@
         {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}
             <li class="breadcrumb-item p-1 {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}active{% endif %}">
                 {% if page.url contains '/case_studies/' and page.url != '/case_studies/' %}
-                    Case Study
+                    case study
                 {% endif %}
             </li>
         {% endif %}
