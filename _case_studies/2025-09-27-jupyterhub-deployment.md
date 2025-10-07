@@ -2,7 +2,7 @@
 layout: case_study
 title: "Deploying JupyterHub with DockerSpawner"
 date: 2025-09-27
-summary: Centralized computing platform for scientists to work with PDS data in a cloud-like environment.
+summary: A centralized, scientific computing platform for scientists to work directly with PDS data in a cloud-like environment.
 ---
 
 As part of my work with the Planetary Data System (PDS), I led the deployment of a scalable, containerized JupyterHub environment to support scientific computing and data analysis workflows. The goal was to provide secure access to PDS compute and storage resources via a flexible and user-friendly platform for working with Python-based tools and notebooks, while simultaneously laying the groundwork for future migration to AWS.
