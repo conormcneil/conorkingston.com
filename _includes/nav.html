@@ -1,9 +1,10 @@
 <nav aria-label="breadcrumb" class="m-2">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item p-1 {% if page.url == '/' %}active{% endif %}">
-            <a {% if page.url != '/' %}href="/"{% endif %}>Home
-            </a>
-        </li>
+        {% if page.url != '/' %}
+            <li class="breadcrumb-item p-1">
+                <a href="/">Home</a>
+            </li>
+        {% endif %}
         {% if page.url contains '/blog/' %}
             <li class="breadcrumb-item p-1 {% if page.url contains '/blog/' and pagelurl == '/blog/' %}active{% endif %}">
                 {% if page.url contains '/blog/' %}
