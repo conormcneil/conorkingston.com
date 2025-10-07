@@ -21,8 +21,8 @@ This project showcases my multifaceted skill set as a <strong>systems administra
 - Partnered with the lead project scientist to gather and refine technical requirements.
 - Conducted comparative analysis of containerized solutions, ultimately selecting **[JupyterHub](https://jupyter.org/hub) with [DockerSpawner](https://github.com/jupyterhub/dockerspawner)** to balance usability, scalability, and maintainablity.
 - Designed a deployment architecture that integrates with existing on-prem infrastructure, including:
-    - **SSL termination via a proxy VM running Apache httpd**, supporting multiple subdomains under a shared external IP.
-    - **Secure, direct access to archive data stored on an on-prem NAS**, using **NFS mounts** combined with **[UnionFS](https://unionfs.filesystems.org/) overlays** to provide seamless, read-only access to hundreds of terabytes of archive datasets while preserving container isolation and performance.
+    - **SSL termination via a proxy VM running Apache httpd**, supporting multiple subdomains under a shared external IPF
+    - **Secure, direct access to archive data stored on an on-prem NAS**, using **NFS mounts** combined with **[Unionfs](https://unionfs.filesystems.org/) overlays** to provide seamless, read-only access to hundreds of terabytes of archive datasets while preserving container isolation and performance.
 
 
 ### Infrastructure & Deployment
@@ -69,10 +69,10 @@ This project showcases my multifaceted skill set as a <strong>systems administra
 
 ---
 
-## Outcome
+## Challenges
 {: .pb-2}
 
-### Challenges
+### Mounting archive data
 {: .text-secondary}
 
 **Challenge**: Disorganized archive data split across multiple directories, including overlapping and superseded datasets.
@@ -89,26 +89,15 @@ This situation required a solution that could abstract away the underlying compl
 
 Solving this technical challenge taught be a great deal about **filesystem overlays**, particularly how they can be used to abstract and simplify access to fragmented or inconsistent data sources. It even works with network storage, which makes it incredibly adaptable. I'm glad to have this knowledge in my toolbelt- it's a powerful technique I'll be able to apply to future filesystem challenges, especially in environments where legacy data structures and modern workflows intersect.
 
-### Impact
-{: .text-secondary}
-
-- Enabled researchers to run Python notebooks without local setup.
-- Reduced onboarding time for new users.
-- Improved reproducibility and collaboration across teams.
-- Established a foundation for future cloud migration.
-
 ---
 
-## Reflections
+## Impact
 {: .pb-2}
 
-This project deepened my experience with container orchestration, secure authentication, and infrastructure-as-code. If I were to iterate on this deployment, I’d explore Kubernetes for better scalability and integrate monitoring tools like Prometheus and Grafana for observability.
+- Enabled researchers to run Python notebooks securely alongside PDS archive data using PDS-provided resources without any local setup.
+- Established a pathway that supports future migration of the archive data and the JupyterHub environment to the cloud.
 
----
+<!-- --- -->
 
-## Related Work & Next Steps
-{: .pb-2}
-
-- Migrate the deployment to AWS using EKS and S3-backed storage.
-- Expand support for R and Julia kernels.
-- Implement role-based access controls and resource quotas.
+<!-- ## Reflections -->
+<!-- {: .pb-2} -->
