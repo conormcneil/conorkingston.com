@@ -40,7 +40,7 @@ title: Home
     <div class="col-12 col-md-4 mt-5">
       <div class="d-flex justify-content-end mb-3">
         <section class="t">
-          <a href="assets/Conor_Kingston_Resume.pdf" class="btn btn-primary">view my resume</a>
+          <a href="assets/Kingston-Systems_Administrator_Resume.pdf" class="btn btn-primary">view my resume</a>
         </section>
       </div>
       <section id="contact-me">
