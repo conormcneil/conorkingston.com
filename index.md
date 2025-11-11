@@ -23,8 +23,7 @@ title: Home
 
       <section class="mb-3" id="blog">
         <h2>blog</h2>
-        <p>stay tuned for more!</P>
-        <!-- {% for post in site.posts | limit: 2 %}
+        {% for post in site.posts | limit: 2 %}
           {% unless post.exclue_from_list %}
             {% include card-link.html
               url=post.url
@@ -34,7 +33,7 @@ title: Home
             %}
           {% endunless %}
         {% endfor %}
-        <a href="/blog/" class="btn btn-secondary">see more blog posts</a> -->
+        <a href="/blog/" class="btn btn-secondary">see more blog posts</a>
       </section>
     </div>
 
